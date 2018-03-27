@@ -1,0 +1,28 @@
+<resources>
+
+    <color name="c_000000">#000000</color>
+    <color name="c_ffffff">#ffffff</color>
+    <color name="c_c15d3e">#c15d3e</color>
+    <color name="c_141414">#141414</color>
+    <color name="c_333333">#333333</color>
+    <color name="c_666666">#666666</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_b19985">#b19985</color>
+    <color name="c_ebe9e8">#ebe9e8</color>
+    <color name="c_d5d5d5">#d5d5d5</color>
+    <color name="c_e0e0e0e">#e0e0e0</color>
+    <color name="c_e6e6e6">#e6e6e6</color>
+    <color name="c_de4c3e">#de4c3e</color>
+    <color name="c_508cee">#508cee</color>
+    <color name="c_d89b6a">#d89b6a</color>
+    <color name="c_53535b">#53535b</color>
+    <color name="c_cccccc">#cccccc</color>
+    <color name="c_e9e7e6">#e9e7e6</color>
+    <color name="c_f4f1f0">#f4f1f0</color>
+    <color name="c_fff6e6">#fff6e6</color>
+    <color name="c_202020">#202020</color>
+    <color name="c_faf8f7">#faf8f7</color>
+
+    <color name="mc">#c8ccd1</color>
+
+</resources>
