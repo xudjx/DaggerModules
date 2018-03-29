@@ -70,5 +70,5 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.dagger_version}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknife_version}"
     annotationProcessor "com.alibaba:arouter-compiler:${rootProject.ext.arouter_compiler_version}"
-    compile project(':basemodule')
+    implementation project(':basemodule')
 }

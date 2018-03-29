@@ -49,37 +49,37 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile "com.android.support:design:${rootProject.ext.supportLibraryVersion}"
-    compile "com.android.support:support-v4:${rootProject.ext.supportLibraryVersion}"
-    compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibraryVersion}"
-    compile "com.android.support:cardview-v7:${rootProject.ext.supportLibraryVersion}"
+    api "com.android.support:design:${rootProject.ext.supportLibraryVersion}"
+    api "com.android.support:support-v4:${rootProject.ext.supportLibraryVersion}"
+    api "com.android.support:appcompat-v7:${rootProject.ext.supportLibraryVersion}"
+    api "com.android.support:cardview-v7:${rootProject.ext.supportLibraryVersion}"
 
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testImplementation "junit:junit:${rootProject.ext.junitVersion}"
 
-    compile "com.android.support:multidex:${rootProject.ext.multidex}"
-    compile 'org.greenrobot:eventbus:3.1.1'
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.9.1'
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.3.0'
-    compile "com.google.dagger:dagger:${rootProject.ext.dagger_version}"
+    api "com.android.support:multidex:${rootProject.ext.multidex}"
+    api 'org.greenrobot:eventbus:3.1.1'
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    api 'io.reactivex:rxandroid:1.2.1'
+    api 'io.reactivex:rxjava:1.3.0'
+    api "com.google.dagger:dagger:${rootProject.ext.dagger_version}"
     annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.dagger_version}"
     compile ("com.jakewharton:butterknife:${rootProject.ext.butterknife_version}") {
         exclude group: 'com.android.support'
     }
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknife_version}"
-    compile 'com.google.code.gson:gson:2.8.1'
-    compile 'com.github.orhanobut:logger:2.1.1'
-    compile 'com.google.guava:guava:23.5-android'
+    api 'com.google.code.gson:gson:2.8.1'
+    api 'com.github.orhanobut:logger:2.1.1'
+    api 'com.google.guava:guava:23.5-android'
 
     // ARoute 引入
-    compile "com.alibaba:arouter-api:${rootProject.ext.arouter_api_version}"
+    api "com.alibaba:arouter-api:${rootProject.ext.arouter_api_version}"
     annotationProcessor "com.alibaba:arouter-compiler:${rootProject.ext.arouter_compiler_version}"
 }

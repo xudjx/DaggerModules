@@ -40,7 +40,9 @@ dependencies {
     })
     testImplementation "junit:junit:${rootProject.ext.junitVersion}"
 
-    compile project(':modulea')
+    compileOnly project(':basemodule')
 
-    compile project(':moduleb')
+    implementation project(':modulea')
+
+    implementation project(':moduleb')
 }
