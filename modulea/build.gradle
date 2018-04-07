@@ -1,8 +1,15 @@
-if (isBuildModule.toBoolean()) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin: 'com.android.library'
+buildscript {
+    repositories {
+        maven {
+            url uri('../release')
+        }
+    }
+    dependencies {
+        classpath 'com.xud:comgradle:1.0'
+    }
 }
+
+apply plugin: 'com.xud.comgradle'
 apply plugin: 'com.jakewharton.butterknife'
 
 android {
@@ -46,17 +53,6 @@ android {
             }
         }
     }
-
-    sourceSets {
-        main {
-            if (isBuildModule.toBoolean()) {
-                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/release/AndroidManifest.xml'
-            }
-        }
-    }
-
 }
 
 dependencies {

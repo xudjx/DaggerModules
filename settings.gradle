@@ -1,1 +1,1 @@
-include ':app', ':basemodule', ':modulea', ':moduleb', ':componentlib', ':componentservice'
+include ':app', ':basemodule', ':modulea', ':moduleb', ':componentlib', ':componentservice', ':build-gradle'

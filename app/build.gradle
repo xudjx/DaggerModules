@@ -1,4 +1,15 @@
-apply plugin: 'com.android.application'
+buildscript {
+    repositories {
+        maven {
+            url uri('../release')
+        }
+    }
+    dependencies {
+        classpath 'com.xud:comgradle:1.0'
+    }
+}
+
+apply plugin: 'com.xud.comgradle'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -42,8 +53,10 @@ dependencies {
     testImplementation "junit:junit:${rootProject.ext.junitVersion}"
 
     api project(':componentservice')
+}
 
-    api project(':modulea')
 
-    api project(':moduleb')
+combuild {
+    applicationName = 'com.xud.app.MainApplication'
+    isRegisterCompoAuto = false
 }

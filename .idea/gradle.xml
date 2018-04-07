@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/basemodule" />
+            <option value="$PROJECT_DIR$/build-gradle" />
             <option value="$PROJECT_DIR$/componentlib" />
             <option value="$PROJECT_DIR$/componentservice" />
             <option value="$PROJECT_DIR$/modulea" />
