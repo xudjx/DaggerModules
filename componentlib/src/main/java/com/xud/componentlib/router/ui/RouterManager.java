@@ -1,10 +1,9 @@
-package com.xud.base.route;
+package com.xud.componentlib.router.ui;
 
 import android.app.Application;
 import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.orhanobut.logger.Logger;
 
 /**
  * Created by xud on 2017/6/28.
@@ -33,7 +32,6 @@ public class RouterManager {
 
     public static void goHome(Context context) {
         String packageName = context.getApplicationInfo().packageName;
-        Logger.d(packageName);
         String suffix = packageName.substring(packageName.lastIndexOf(".") + 1);
         switch (suffix) {
             case MODULE_A:

@@ -15,14 +15,15 @@ public class BaseModuleKit {
 
     private static BaseModuleKit instance;
     private BaseAppComponent component;
+    private Application application;
 
     public static BaseModuleKit getInstance() {
         if (instance == null) {
             synchronized (BaseModuleKit.class) {
                 if (instance == null) {
                     instance = new BaseModuleKit();
-                    Application application = BaseApplication.getInstance();
-                    instance.component = DaggerBaseAppComponent.builder().appModule(new AppModule(application)).build();
+                    instance.application = BaseApplication.getInstance();
+                    instance.component = DaggerBaseAppComponent.builder().appModule(new AppModule(instance.application)).build();
                 }
             }
         }
@@ -31,5 +32,9 @@ public class BaseModuleKit {
 
     public BaseAppComponent getComponent() {
         return component;
+    }
+
+    public Application getApplication() {
+        return application;
     }
 }

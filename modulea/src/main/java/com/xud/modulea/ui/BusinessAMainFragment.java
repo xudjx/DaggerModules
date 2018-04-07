@@ -15,7 +15,7 @@ import com.xud.base.Constants;
 import com.xud.base.modulekit.BusinessBModuleKit;
 import com.xud.base.net.ApiError;
 import com.xud.base.net.HttpResponseObserver;
-import com.xud.base.route.RouterManager;
+import com.xud.componentlib.router.ui.RouterManager;
 import com.xud.modulea.R;
 import com.xud.modulea.R2;
 import com.xud.modulea.entity.CityWeatherDTO;
@@ -107,8 +107,7 @@ public class BusinessAMainFragment extends BaseBusinessAFragment {
         callbackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message = BusinessBModuleKit.getInstance().getBusinessBProvider().getBusinessFlag();
-                detailView.setText(message);
+
             }
         });
     }

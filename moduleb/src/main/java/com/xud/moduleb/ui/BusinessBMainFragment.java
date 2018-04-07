@@ -13,10 +13,9 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.xud.base.Constants;
 import com.xud.base.modulekit.BusinessAModuleKit;
-import com.xud.base.modulekit.BusinessBModuleKit;
 import com.xud.base.net.ApiError;
 import com.xud.base.net.HttpResponseObserver;
-import com.xud.base.route.RouterManager;
+import com.xud.componentlib.router.ui.RouterManager;
 import com.xud.moduleb.R;
 import com.xud.moduleb.R2;
 import com.xud.moduleb.entity.CityEnvironmentDTO;
@@ -108,8 +107,7 @@ public class BusinessBMainFragment extends BaseBusinessBFragment {
         callbackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message = BusinessAModuleKit.getInstance().getBusinessAProvider().getBusinessFlag();
-                detailView.setText(message);
+
             }
         });
     }

@@ -10,8 +10,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.xud.base.core.BaseActivity;
-import com.xud.modulea.ui.BusinessAMainFragment;
-import com.xud.moduleb.ui.BusinessBMainFragment;
+import com.xud.componentlib.router.Router;
+import com.xud.componentservice.modulea.BusinessAService;
+import com.xud.componentservice.moduleb.BusinessBService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +22,15 @@ public class MainActivity extends BaseActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
 
+    BusinessAService businessAService;
+    BusinessBService businessBService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        businessAService = (BusinessAService) Router.getInstance().getService(BusinessAService.class.getSimpleName());
+        businessBService = (BusinessBService) Router.getInstance().getService(BusinessBService.class.getSimpleName());
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.viewpager);
         initTabLayout();
@@ -48,8 +54,8 @@ public class MainActivity extends BaseActivity {
             super(fm);
             this.mContext = context;
             mFragmentTab = new ArrayList<>();
-            mFragmentTab.add(new BusinessAMainFragment());
-            mFragmentTab.add(new BusinessBMainFragment());
+            mFragmentTab.add(businessAService.getMainFragment());
+            mFragmentTab.add(businessBService.getMainFragment());
         }
 
         @Override

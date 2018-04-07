@@ -32,8 +32,11 @@ public abstract class BaseApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        registerProvider();
+        initComponentDi();
+        registerRouter();
     }
 
-    public abstract void registerProvider();
+    public abstract void initComponentDi();
+
+    public abstract void registerRouter();
 }

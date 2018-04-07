@@ -5,9 +5,12 @@ import com.xud.base.di.AppComponent;
 import com.xud.base.modulekit.AppModuleComponentDelegate;
 import com.xud.base.modulekit.BaseModuleKit;
 import com.xud.base.modulekit.BusinessBModuleKit;
-import com.xud.base.route.RouterManager;
+import com.xud.componentlib.router.Router;
+import com.xud.componentlib.router.ui.RouterManager;
+import com.xud.componentservice.moduleb.BusinessBService;
 import com.xud.moduleb.di.BusinessBAppComponent;
 import com.xud.moduleb.di.DaggerBusinessBAppComponent;
+import com.xud.moduleb.serviceimpl.BusinessBServiceImpl;
 
 /**
  * Created by xud on 2018/3/25.
@@ -28,16 +31,16 @@ public class BusinessBApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        initUtils();
-        BusinessBModuleKit.getInstance().init(this, componentDelegate);
     }
 
     @Override
-    public void registerProvider() {
-        new BusinessBProviderRegister().regist();
+    public void initComponentDi() {
+        BusinessBModuleKit.getInstance().init(componentDelegate);
     }
 
-    private void initUtils() {
+    @Override
+    public void registerRouter() {
         RouterManager.initRouter(instance);
+        Router.getInstance().addService(BusinessBService.class.getSimpleName(), new BusinessBServiceImpl());
     }
 }

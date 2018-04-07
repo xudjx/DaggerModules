@@ -62,13 +62,14 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs'
     })
     testImplementation "junit:junit:${rootProject.ext.junitVersion}"
 
     annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.dagger_version}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknife_version}"
     annotationProcessor "com.alibaba:arouter-compiler:${rootProject.ext.arouter_compiler_version}"
-    implementation project(':basemodule')
+    api project(':componentservice')
 }
