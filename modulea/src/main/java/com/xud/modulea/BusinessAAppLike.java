@@ -9,6 +9,7 @@ import com.xud.componentlib.router.Router;
 import com.xud.componentservice.modulea.BusinessAService;
 import com.xud.modulea.di.BusinessAAppComponent;
 import com.xud.modulea.di.DaggerBusinessAAppComponent;
+import com.xud.modulea.intercept.ModuleAUIInterCeptor;
 import com.xud.modulea.serviceimpl.BusinessAServiceImpl;
 
 /**
@@ -31,10 +32,14 @@ public class BusinessAAppLike implements IApplicationLike {
     public void onCreate() {
         Router.getInstance().addService(BusinessAService.class.getSimpleName(), new BusinessAServiceImpl());
         BusinessAModuleKit.getInstance().init(componentDelegate);
+
+        ModuleAUIInterCeptor.isRegister = true;
     }
 
     @Override
     public void onStop() {
         Router.getInstance().removeService(BusinessAService.class.getSimpleName());
+
+        ModuleAUIInterCeptor.isRegister = false;
     }
 }

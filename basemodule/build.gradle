@@ -56,7 +56,7 @@ dependencies {
     api "com.android.support:appcompat-v7:${rootProject.ext.supportLibraryVersion}"
     api "com.android.support:cardview-v7:${rootProject.ext.supportLibraryVersion}"
 
-    api project(':componentlib')
+    api project(':baselib')
 
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
