@@ -41,6 +41,6 @@ public class BusinessBApplication extends BaseApplication {
     @Override
     public void registerRouter() {
         RouterManager.initRouter(instance);
-        Router.getInstance().addService(BusinessBService.class.getSimpleName(), new BusinessBServiceImpl());
+        Router.getInstance().addService(BusinessBService.class, new BusinessBServiceImpl());
     }
 }

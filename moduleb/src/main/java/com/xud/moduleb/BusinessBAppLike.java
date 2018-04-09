@@ -29,12 +29,12 @@ public class BusinessBAppLike implements IApplicationLike {
 
     @Override
     public void onCreate() {
-        Router.getInstance().addService(BusinessBService.class.getSimpleName(), new BusinessBServiceImpl());
+        Router.getInstance().addService(BusinessBService.class, new BusinessBServiceImpl());
         BusinessBModuleKit.getInstance().init(componentDelegate);
     }
 
     @Override
     public void onStop() {
-        Router.getInstance().removeService(BusinessBService.class.getSimpleName());
+        Router.getInstance().removeService(BusinessBService.class);
     }
 }

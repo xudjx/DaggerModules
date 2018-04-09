@@ -30,7 +30,7 @@ public class BusinessAAppLike implements IApplicationLike {
 
     @Override
     public void onCreate() {
-        Router.getInstance().addService(BusinessAService.class.getSimpleName(), new BusinessAServiceImpl());
+        Router.getInstance().addService(BusinessAService.class, new BusinessAServiceImpl());
         BusinessAModuleKit.getInstance().init(componentDelegate);
 
         ModuleAUIInterCeptor.isRegister = true;
@@ -38,7 +38,7 @@ public class BusinessAAppLike implements IApplicationLike {
 
     @Override
     public void onStop() {
-        Router.getInstance().removeService(BusinessAService.class.getSimpleName());
+        Router.getInstance().removeService(BusinessAService.class);
 
         ModuleAUIInterCeptor.isRegister = false;
     }

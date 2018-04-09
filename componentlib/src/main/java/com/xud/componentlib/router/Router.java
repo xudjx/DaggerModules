@@ -33,26 +33,25 @@ public class Router {
         return instance;
     }
 
-
-    public synchronized void addService(String serviceName, Object serviceImpl) {
-        if (serviceName == null || serviceImpl == null) {
+    public synchronized <T> void addService(Class<T> tClass, T t) {
+        if (tClass == null || t == null) {
             return;
         }
-        services.put(serviceName, serviceImpl);
+        services.put(tClass.getSimpleName(), t);
     }
 
-    public synchronized Object getService(String serviceName) {
-        if (serviceName == null) {
+    public synchronized <T> T getService(Class<T> tClass) {
+        if (tClass == null || !services.containsKey(tClass.getSimpleName())) {
             return null;
         }
-        return services.get(serviceName);
+        return (T) services.get(tClass.getSimpleName());
     }
 
-    public synchronized void removeService(String serviceName) {
-        if (serviceName == null) {
-            return;
+    public synchronized <T> void removeService(Class<T> tClass) {
+        if (tClass == null || !services.containsKey(tClass.getSimpleName())) {
+            return ;
         }
-        services.remove(serviceName);
+        services.remove(tClass.getSimpleName());
     }
 
     /**

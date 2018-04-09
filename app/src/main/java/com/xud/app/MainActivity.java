@@ -29,8 +29,8 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        businessAService = (BusinessAService) Router.getInstance().getService(BusinessAService.class.getSimpleName());
-        businessBService = (BusinessBService) Router.getInstance().getService(BusinessBService.class.getSimpleName());
+        businessAService = Router.getInstance().getService(BusinessAService.class);
+        businessBService = Router.getInstance().getService(BusinessBService.class);
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.viewpager);
         initTabLayout();
