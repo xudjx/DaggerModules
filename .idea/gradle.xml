@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/componentservice" />
             <option value="$PROJECT_DIR$/modulea" />
             <option value="$PROJECT_DIR$/moduleb" />
+            <option value="$PROJECT_DIR$/modulekotlin" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

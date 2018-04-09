@@ -16,6 +16,7 @@ public class MainApplication extends BaseApplication {
 
         Router.registerComponent("com.xud.modulea.BusinessAAppLike");
         Router.registerComponent("com.xud.moduleb.BusinessBAppLike");
+        Router.registerComponent("com.xud.modulekotlin.ModuleKotlinAppLike");
     }
 
     @Override

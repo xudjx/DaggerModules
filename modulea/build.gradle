@@ -53,6 +53,8 @@ android {
             }
         }
     }
+
+    resourcePrefix "module_a_"
 }
 
 dependencies {

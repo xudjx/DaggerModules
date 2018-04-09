@@ -13,6 +13,7 @@ import com.xud.base.core.BaseActivity;
 import com.xud.componentlib.router.Router;
 import com.xud.componentservice.modulea.BusinessAService;
 import com.xud.componentservice.moduleb.BusinessBService;
+import com.xud.componentservice.modulekotlin.KotlinService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity {
 
     BusinessAService businessAService;
     BusinessBService businessBService;
+    KotlinService kotlinService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         businessAService = Router.getInstance().getService(BusinessAService.class);
         businessBService = Router.getInstance().getService(BusinessBService.class);
+        kotlinService = Router.getInstance().getService(KotlinService.class);
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.viewpager);
         initTabLayout();
@@ -45,8 +48,8 @@ public class MainActivity extends BaseActivity {
 
     public class MyAdapter extends FragmentPagerAdapter {
 
-        private final int PAGE_COUNT = 2;
-        private String[] tabTitle = new String[] {"模块A", "模块B"};
+        private final int PAGE_COUNT = 3;
+        private String[] tabTitle = new String[] {"模块A", "模块B", "Kotlin"};
         private Context mContext;
         private List<Fragment> mFragmentTab;
 
@@ -56,6 +59,7 @@ public class MainActivity extends BaseActivity {
             mFragmentTab = new ArrayList<>();
             mFragmentTab.add(businessAService.getMainFragment());
             mFragmentTab.add(businessBService.getMainFragment());
+            mFragmentTab.add(kotlinService.getMainFragment());
         }
 
         @Override

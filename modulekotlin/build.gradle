@@ -10,7 +10,15 @@ buildscript {
 }
 
 apply plugin: 'com.xud.comgradle'
-apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+kapt {
+    arguments {
+        arg("host", "kotlin")
+    }
+}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -33,8 +41,6 @@ android {
                 arguments = [ moduleName : project.getName() ]
             }
         }
-
-
     }
 
     compileOptions {
@@ -42,19 +48,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    buildTypes {
-        release {
-            postprocessing {
-                removeUnusedCode false
-                removeUnusedResources false
-                obfuscate false
-                optimizeCode false
-                proguardFile 'proguard-rules.pro'
-            }
-        }
-    }
 
-    resourcePrefix "module_b_"
+    resourcePrefix "module_kotlin_"
 }
 
 dependencies {
@@ -66,8 +61,6 @@ dependencies {
     })
     testImplementation "junit:junit:${rootProject.ext.junitVersion}"
 
-    annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.dagger_version}"
-    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknife_version}"
-    annotationProcessor "com.alibaba:arouter-compiler:${rootProject.ext.arouter_compiler_version}"
     api project(':componentservice')
+    api "org.jetbrains.kotlin:kotlin-stdlib-jre7:${rootProject.ext.kotlin_version}"
 }

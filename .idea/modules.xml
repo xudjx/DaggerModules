@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/componentservice/componentservice.iml" filepath="$PROJECT_DIR$/componentservice/componentservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/modulea/modulea.iml" filepath="$PROJECT_DIR$/modulea/modulea.iml" />
       <module fileurl="file://$PROJECT_DIR$/moduleb/moduleb.iml" filepath="$PROJECT_DIR$/moduleb/moduleb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modulekotlin/modulekotlin.iml" filepath="$PROJECT_DIR$/modulekotlin/modulekotlin.iml" />
     </modules>
   </component>
 </project>
