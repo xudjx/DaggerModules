@@ -35,10 +35,10 @@
             android:text="模块路由" />
 
         <Button
-            android:id="@+id/callback"
+            android:id="@+id/innerGoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="模块通信" />
+            android:text="内部跳转" />
 
         <TextView
             android:id="@+id/detail_view"

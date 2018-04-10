@@ -6,10 +6,12 @@
         android:supportsRtl="true">
 
         <activity
-            android:name=".ui.BusinessAMainActivity"
+            android:name="com.xud.modulea.ui.BusinessAMainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
         </activity>
+
+        <activity android:name="com.xud.modulea.ui.ModuleADatabandingActivity"/>
 
     </application>
 

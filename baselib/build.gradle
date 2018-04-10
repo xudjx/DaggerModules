@@ -41,5 +41,7 @@ dependencies {
     })
     testImplementation "junit:junit:${rootProject.ext.junitVersion}"
 
+    api 'com.squareup.picasso:picasso:2.71828'
+
     api project(':componentlib')
 }

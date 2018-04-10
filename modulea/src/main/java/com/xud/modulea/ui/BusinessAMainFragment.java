@@ -1,5 +1,6 @@
 package com.xud.modulea.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,7 +13,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.xud.base.Constants;
-import com.xud.base.modulekit.BusinessBModuleKit;
 import com.xud.base.net.ApiError;
 import com.xud.base.net.HttpResponseObserver;
 import com.xud.componentlib.router.ui.RouterManager;
@@ -50,8 +50,8 @@ public class BusinessAMainFragment extends BaseBusinessAFragment {
     TextView detailView;
     @BindView(R2.id.jump)
     Button jumpBtn;
-    @BindView(R2.id.callback)
-    Button callbackBtn;
+    @BindView(R2.id.innerGoto)
+    Button innerGoto;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -104,10 +104,10 @@ public class BusinessAMainFragment extends BaseBusinessAFragment {
                 RouterManager.newPage(RouterManager.URL_MAIN_BUSINESS_B);
             }
         });
-        callbackBtn.setOnClickListener(new View.OnClickListener() {
+        innerGoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getContext(), ModuleADatabandingActivity.class));
             }
         });
     }
