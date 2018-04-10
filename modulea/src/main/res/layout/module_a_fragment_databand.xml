@@ -31,6 +31,14 @@
                     android:scaleType="centerCrop"
                     app:imageUrl='@{"http://7xopuh.dl1.z0.glb.clouddn.com/pic06.jpg"}' />
 
+
+                <TextView
+                    android:id="@+id/detail_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.detail}"
+                    android:textSize="15dp"/>
+
             </LinearLayout>
 
         </ScrollView>
