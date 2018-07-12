@@ -1,7 +1,10 @@
 # DaggerModules
 
 
-详细说明请见文章：[Android模块化探索和实践：Dagger2在模块化中的应用](https://www.jianshu.com/p/581a7d8fc35a)
+详细说明请见系列文章：
+[Android 模块化探索和实践（1）：基本思路](https://www.jianshu.com/p/a2382dfb76ed)
+[Android模块化探索和实践：Dagger2在模块化中的应用](https://www.jianshu.com/p/581a7d8fc35a)
+[Android模块化探索和实践（3）：模块间彻底隔离](https://www.jianshu.com/p/5ca845d2e9d7)
 
 项目结构说明：
 
